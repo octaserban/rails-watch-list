@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>name</th>
+      <th>Name</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -12,7 +12,10 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.name %></td>
+        <td><%= link_to 'Show', list %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "Add New List", new_list_path(@list), class: 'btn btn-secondary' %>

@@ -1,0 +1,8 @@
+<%= simple_form_for [list, bookmark] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+  <%= f.association :movie, prompt: 'Select a movie' %>
+  <%= f.button :submit %>
+<% end %>
